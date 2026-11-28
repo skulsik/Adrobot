@@ -66,6 +66,21 @@ class StreamOffer(Base):
         nullable=True,
     )
 
+    synced_share: Mapped[Decimal | None] = mapped_column(
+        Numeric(6, 2),
+        nullable=True,
+    )
+
+    synced_is_fixed: Mapped[bool | None] = mapped_column(
+        Boolean,
+        nullable=True,
+    )
+
+    synced_is_deleted: Mapped[bool | None] = mapped_column(
+        Boolean,
+        nullable=True,
+    )
+
     is_fixed: Mapped[bool] = mapped_column(
         Boolean,
         default=False,

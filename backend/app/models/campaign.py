@@ -3,6 +3,7 @@ from datetime import datetime
 from sqlalchemy import (
     String,
     Integer,
+    Boolean,
     DateTime,
     func,
 )
@@ -40,6 +41,12 @@ class Campaign(Base):
     state: Mapped[str | None] = mapped_column(
         String(50),
         nullable=True,
+    )
+
+    is_present_in_keitaro: Mapped[bool] = mapped_column(
+        Boolean,
+        default=True,
+        nullable=False,
     )
 
     domain_id: Mapped[int | None] = mapped_column(

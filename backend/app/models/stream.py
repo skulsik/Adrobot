@@ -80,6 +80,12 @@ class Stream(Base):
         nullable=False,
     )
 
+    is_present_in_keitaro: Mapped[bool] = mapped_column(
+        Boolean,
+        default=True,
+        nullable=False,
+    )
+
     raw_payload: Mapped[dict] = mapped_column(
         JSONB,
         default=dict,
